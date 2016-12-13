@@ -1,0 +1,271 @@
+﻿body {
+    background:url('/Images/sunset.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+html{
+    overflow: -moz-scrollbars-vertical; 
+    overflow-y:scroll;
+}
+
+h1{
+    color:#ffffff;
+    text-shadow: 2px 2px 2px #000000;
+    text-align: center;
+}
+
+h3{
+    color:#ffffff;
+    text-shadow: 2px 2px 2px #000000;
+    text-align:center;
+}
+
+h4{
+    color:#ffffff;
+    text-shadow: 2px 2px 2px #000000;
+    text-align:center;
+}
+
+.largeFont{
+    font-size:large;
+}
+
+.infoText{
+    text-align:center;
+}
+
+.showPadding{
+    padding-bottom:3%;
+}
+
+.sliderBar{
+    margin-top:6%;
+}
+
+#mainDiv{
+    background-color: rgba(128, 128, 128, 0.5);
+    margin-top:5%;
+}
+
+#socialSecurityFeedback{
+    background-color: #cbab36;
+    border: 1px solid black;
+    text-align:center;
+    color: white;
+    text-shadow: 1px 1px 1px #000000;
+    font-size:large;
+}
+
+#phoneFeedback{
+    background-color: #cbab36;
+    border: 1px solid black;
+    text-align:center;
+    color: white;
+    text-shadow: 1px 1px 1px #000000;
+    font-size:large;
+}
+
+#emailFeedback{
+    background-color: #cbab36;
+    border: 1px solid black;
+    text-align:center;
+    color: white;
+    text-shadow: 1px 1px 1px #000000;
+    font-size:large;
+}
+
+#firstDiv{
+    opacity: 1;
+}
+
+.tableDiv{
+    background-color:white;
+    text-align:center;
+    font-size:larger;
+}
+
+.thead{
+    text-align:center;
+}
+
+#confirmationTable{
+    font-size:larger;
+    text-align: center;
+}
+
+#continue{
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-shadow: 2px 2px 2px #000000;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #f47a70;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 1px 1px 1px#000000;
+}
+
+#navigator{
+    text-align:center;
+}
+
+#apply{
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-shadow: 2px 2px 2px #000000;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #f47a70;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 1px 1px 1px#000000;
+}
+
+/*The following code is heavily inspired upon:*/
+/*http://callmenick.com/post/various-css-input-text-styles*/
+input[type="text"] {
+  padding: 10px;
+  border: solid 1px #dcdcdc;
+  transition: box-shadow 0.3s, border 0.3s;
+  text-align:center;
+  font-size:large;
+}
+
+input[type="email"] {
+  padding: 10px;
+  border: solid 1px #dcdcdc;
+  transition: box-shadow 0.3s, border 0.3s;
+  text-align:center;
+  font-size:large;
+}
+
+input[type="text"]:focus,
+input[type="text"].focus {
+  border: solid 1px #707070;
+  box-shadow: 0 0 5px 1px #969696;
+}
+
+/*The following code is heavily inspired upon:*/
+/*https://css-tricks.com/styling-cross-browser-compatible-range-inputs-css/*/
+input[type=range] {
+  -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+  width: 100%; /* Specific width is required for Firefox. */
+  background: transparent; /* Otherwise white in Chrome */
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+
+input[type=range]:focus {
+  outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+}
+
+input[type=range]::-ms-track {
+  width: 100%;
+  cursor: pointer;
+
+  /* Hides the slider so custom styles can be added */
+  background: transparent; 
+  border-color: transparent;
+  color: transparent;
+}
+
+/* Special styling for WebKit/Blink */
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: 1px solid #000000;
+  height: 36px;
+  width: 16px;
+  border-radius: 3px;
+  background: #ffffff;
+  cursor: pointer;
+  margin-top: -14px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d; /* Add cool effects to your sliders! */
+}
+
+/* All the same stuff for Firefox */
+input[type=range]::-moz-range-thumb {
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  border: 1px solid #000000;
+  height: 36px;
+  width: 16px;
+  border-radius: 3px;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+/* All the same stuff for IE */
+input[type=range]::-ms-thumb {
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  border: 1px solid #000000;
+  height: 36px;
+  width: 16px;
+  border-radius: 3px;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  background: #f47a70;
+  border-radius: 1.3px;
+  border: 0.2px solid #010101;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #f47a70;
+}
+
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  background: #f47a70;
+  border-radius: 1.3px;
+  border: 0.2px solid #010101;
+}
+
+input[type=range]::-ms-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  border-width: 16px 0;
+  color: transparent;
+}
+
+input[type=range]::-ms-fill-lower {
+  background: #f47a70;
+  border: 0.2px solid #010101;
+  border-radius: 2.6px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+
+input[type=range]:focus::-ms-fill-lower {
+  background: #f47a70;
+}
+
+input[type=range]::-ms-fill-upper {
+  background: #f47a70;
+  border: 0.2px solid #010101;
+  border-radius: 2.6px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+
+input[type=range]:focus::-ms-fill-upper {
+  background: #f47a70;
+}

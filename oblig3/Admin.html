@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>List of all applications</title><meta charset="utf-8" />
+    <script src="Scripts/jquery-3.1.1.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/oblig3.js"></script>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/styles.css" rel="stylesheet" />
+    <script type="text/javascript">
+        $(document).ready(function () {
+            getAllApplications();
+        })
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="row infoText showPadding" id="navigator">
+            <a href="/Index.html" class="btn btn-info" role="button">Go to the application form</a>
+        </div>
+        <div class="row">
+            <h1 id="mainHeading"></h1>
+            <div id="result"></div>
+        </div>
+    </div>
+</body>
+</html>

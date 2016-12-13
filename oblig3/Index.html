@@ -1,0 +1,157 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Apply for a loan</title>
+    <meta charset="utf-8" />
+    <script src="Scripts/jquery-3.1.1.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/oblig3.js"></script>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/styles.css" rel="stylesheet"/>
+</head>
+<body>
+    <div class="container">
+        <!-- LINK TO LIST OF ALL APPLICATIONS -->
+        <div class="row" id="navigator">
+            <a href="/Admin.html" class="btn btn-info" role="button">See list of applications</a>
+        </div>
+        <div class="row" id="mainDiv">
+            <div class="col-lg-2"></div>
+            <!-- THIS IS THE MAIN DIV -->
+            <div class="col-lg-8" id="firstDiv">
+                <!-- CALCULATOR -->
+                <div class="row" id="calculatorDiv">
+                    <h1>We will help calculate your loan!</h1>
+                    <h3>First things first:</h3>
+                    <!-- THE AMOUNT -->
+                    <div class="col-lg-6">
+                        <div class="form-group infoText">
+                            <h3>How much do you want to borrow?</h3>
+                            <input type="text" id="amountResult" placeholder="The total amount" disabled />
+                            <div class="form-group sliderBar">
+                                <input type="range" id="amount"
+                                       min="10000" max="250000" step="5000" value="5000"
+                                       onInput="updateCalculator()" />
+                            </div>
+                        </div>
+                    </div>
+                    <!-- YEARS -->
+                    <div class="col-lg-6">
+                        <div class="form-group infoText">
+                            <h3>How many years for downpayment</h3>
+                            <input type="text" id="yearResult" placeholder="The total amount of years" disabled />
+                            <div class="form-group sliderBar">
+                                <input type="range" id="years"
+                                       min="1" max="10" step="1" value="1"
+                                       onInput="updateCalculator()" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr />
+                <!-- RESULT -->
+                <div class="row" id="calculatedDiv">
+                    <!-- YEARLY -->
+                    <div class="col-lg-6">
+                        <div class="form-group infoText">
+                            <h3>Yearly sum...</h3>
+                            <input type="text" id="yearly" placeholder="Yearly downpayment" />
+                        </div>
+                    </div>
+                    <!-- MONTHLY -->
+                    <div class="col-lg-6">
+                        <div class="form-group infoText">
+                            <h3>..and every month</h3>
+                            <input type="text" id="monthly" placeholder="Monthly downpayment" />
+                        </div>
+                    </div>
+                </div>
+                <!-- THE TOTAL AMOUNT -->
+                <div class="row">
+                    <div class="col-lg-2"></div>
+                    <div class="col-lg-8">
+                        <div class="output-element" id="output">
+                            <div class="form-group infoText">
+                                <h3 id="output1"></h3>
+                                <h4 id="output2"></h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2"></div>
+                </div>
+                <!-- HOW DO I APPLY? -->
+                <div class="infoText">
+                    <button type="submit" id="continue" onClick="expandForm()">
+                        Wow, that looks great! How can I apply?
+                    </button>
+                </div>
+                <hr />
+                <!-- PERSONAL INFORMATION -->
+                <div class="row" id="submitDiv" hidden>
+                    <form class="form-horizontal">
+                        <!-- SOCIAL SECURITY -->
+                        <div class="form-group has-warning has-feedback"
+                             id="socialSecurityLabel">
+                            <label class="col-sm-2 control-label largeFont" for="socialSecurity">
+                                Social security
+                            </label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="socialSecurity"
+                                       onInput="validateTotal()" maxlength="11"/>
+                                <span class="glyphicon glyphicon-warning-sign form-control-feedback"
+                                      id="socialSecurityGlyph"></span>
+                                <div class="alert" id="socialSecurityFeedback" hidden></div>
+                            </div>
+                        </div>
+                        <!-- PHONE -->
+                        <div class="form-group has-warning has-feedback"
+                             id="phoneLabel">
+                            <label class="col-sm-2 control-label largeFont" for="phone">
+                                Phone
+                            </label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="phone"
+                                       onInput="validateTotal()" maxlength="8" />
+                                <span class="glyphicon glyphicon-warning-sign form-control-feedback"
+                                      id="phoneGlyph"></span>
+                                <div class="alert" id="phoneFeedback" hidden></div>
+                            </div>
+                        </div>
+                        <!-- EMAIL -->
+                        <div class="form-group has-warning has-feedback"
+                             id="emailLabel">
+                            <label class="col-sm-2 control-label largeFont" for="email">
+                                Email
+                            </label>
+                            <div class="col-sm-10">
+                                <input type="email" class="form-control" id="email"
+                                       onInput="validateTotal()" maxlength="50" />
+                                <span class="glyphicon glyphicon-warning-sign form-control-feedback"
+                                      id="emailGlyph"></span>
+                                <div class="alert" id="emailFeedback" hidden></div>
+                            </div>
+                        </div>
+                    </form>
+                    <!-- REGISTERBUTTON -->
+                    <div style="text-align:center">
+                        <button type="submit" id="apply" onClick="registerApplication()">
+                            Oh, not everything is filled out correctly.
+                        </button>
+                    </div>
+                    <hr />
+                </div>
+            </div>
+            <!-- THE RESULT OF THE REGISTRATION -->
+            <div class="col-lg-8" id="secondDiv" hidden>
+                <div class="row infoText">
+                    <h1 id="resultDiv"></h1>
+                    <h3 id="resultSubDiv"></h3>
+                    <div class="tableDiv" id="tableResult"></div>
+                    <button type="button" class="bg-info" onClick="goBack()">Press here to go back</button>
+                </div>
+            </div>
+                <div class="col-lg-2"></div>
+            </div>
+    </div>
+</body>
+</html>
